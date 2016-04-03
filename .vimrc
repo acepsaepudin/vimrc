@@ -3,6 +3,8 @@ set encoding=utf-8
 call plug#begin('~/.vim/plugged')
 Plug 'valloric/youcompleteme' " buat bantu ngehemat ngetik
 Plug 'git@github.com:ctrlpvim/ctrlp.vim.git' "butuh Ctrl+P nya sublim jadi pake ini ^_^
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 call plug#end()
 " butuh sudo ? pake aja ini
 cmap w!! w !sudo tee > /dev/null %<CR>
@@ -40,3 +42,18 @@ set timeoutlen=1000 ttimeoutlen=0 "biar lebih cepet ketika mencet capslock yang 
 " ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+"snipet biar kaya sublim :/
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-l>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
