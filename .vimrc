@@ -1,5 +1,8 @@
 set nocompatible
+set encoding=utf-8
 call plug#begin('~/.vim/plugged')
+Plug 'valloric/youcompleteme' " buat bantu ngehemat ngetik
+Plug 'git@github.com:ctrlpvim/ctrlp.vim.git' "butuh Ctrl+P nya sublim jadi pake ini ^_^
 call plug#end()
 " butuh sudo ? pake aja ini
 cmap w!! w !sudo tee > /dev/null %<CR>
@@ -21,3 +24,19 @@ set mouse=a "biar gak lupa sama mouse saat coding
 set showmatch
 colorscheme Monokai
 set term=screen-256color
+" backup rules
+set backup " enable backup files (.txt~)
+set undofile " enable persistent undo
+
+silent execute '!mkdir -p $HOME/.vim/tmp/backup'
+set backupdir=$HOME/.vim/tmp/backup " where to store backup
+silent execute '!mkdir -p $HOME/.vim/tmp/swap'
+set directory=$HOME/.vim/tmp/swap " where to store swap
+silent execute '!mkdir -p $HOME/.vim/tmp/views'
+set viewdir=$HOME/.vim/tmp/views " where to store view
+silent execute '!mkdir -p $HOME/.vim/tmp/undo'
+set undodir=$HOME/.vim/tmp/undo " where to store undo 
+set timeoutlen=1000 ttimeoutlen=0 "biar lebih cepet ketika mencet capslock yang jadi esc
+" ctrlp
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
