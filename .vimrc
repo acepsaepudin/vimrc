@@ -5,6 +5,7 @@ Plug 'valloric/youcompleteme' " buat bantu ngehemat ngetik
 Plug 'git@github.com:ctrlpvim/ctrlp.vim.git' "butuh Ctrl+P nya sublim jadi pake ini ^_^
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'raimondi/delimitmate' "auto close tag,dan kawan2 nya
 call plug#end()
 " butuh sudo ? pake aja ini
 cmap w!! w !sudo tee > /dev/null %<CR>
@@ -57,3 +58,4 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetDirectories=["plugged/vim-snippets/UltiSnips"]
