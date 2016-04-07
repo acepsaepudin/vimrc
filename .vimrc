@@ -6,6 +6,7 @@ Plug 'git@github.com:ctrlpvim/ctrlp.vim.git' "butuh Ctrl+P nya sublim jadi pake 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'raimondi/delimitmate' "auto close tag,dan kawan2 nya
+Plug 'scrooloose/nerdtree' "kadang sya butuh buka folder kalau belajar framework baru :/
 call plug#end()
 " butuh sudo ? pake aja ini
 cmap w!! w !sudo tee > /dev/null %<CR>
@@ -59,3 +60,6 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetDirectories=["plugged/vim-snippets/UltiSnips"]
+
+"Nerdtree
+map <C-n> :NERDTreeToggle<CR>
