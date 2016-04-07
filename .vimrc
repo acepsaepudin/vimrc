@@ -7,6 +7,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'raimondi/delimitmate' "auto close tag,dan kawan2 nya
 Plug 'scrooloose/nerdtree' "kadang sya butuh buka folder kalau belajar framework baru :/
+Plug 'jistr/vim-nerdtree-tabs' "open nerdtree as tab bro
 call plug#end()
 " butuh sudo ? pake aja ini
 cmap w!! w !sudo tee > /dev/null %<CR>
@@ -41,6 +42,8 @@ set viewdir=$HOME/.vim/tmp/views " where to store view
 silent execute '!mkdir -p $HOME/.vim/tmp/undo'
 set undodir=$HOME/.vim/tmp/undo " where to store undo 
 set timeoutlen=1000 ttimeoutlen=0 "biar lebih cepet ketika mencet capslock yang jadi esc
+nnoremap <C-l> gt
+nnoremap <C-h> gT
 " ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
