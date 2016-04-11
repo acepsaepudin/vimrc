@@ -25,7 +25,13 @@ set ignorecase "jadi kalau mau nyari huruf/kata dibuat gak case sensitive
 set hlsearch "ketika mencari huruf/kata bakal ada highlight nya gan, kalau mau hilangin highlight pake :noh 
 set pastetoggle=<f5> "to stop indeting when pasting with the mouse, then try hitting F5 while in insert mode or :set paste
 set backup
-set mouse=a "biar gak lupa sama mouse saat coding
+"biar gak lupa sama mouse saat coding
+if has('mouse')
+    set mouse=a
+endif    
+
+"supaya bisa copy to clipboard, blok kodenya terus Ctrl+c
+vmap <C-c> "+y" 
 set showmatch
 colorscheme Monokai
 set term=screen-256color
@@ -66,3 +72,7 @@ let g:UltiSnipsSnippetDirectories=["plugged/vim-snippets/UltiSnips"]
 
 "Nerdtree
 map <C-n> :NERDTreeToggle<CR>
+"delimit
+set backspace=2
+let delimitMate_expand_cr = 1 "kalau mau aktifin ini set backspace=2
+"let delimitMate_expand_space = 1
