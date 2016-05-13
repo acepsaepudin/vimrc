@@ -24,6 +24,7 @@ set nowrap
 set ignorecase "jadi kalau mau nyari huruf/kata dibuat gak case sensitive
 set hlsearch "ketika mencari huruf/kata bakal ada highlight nya gan, kalau mau hilangin highlight pake :noh 
 set pastetoggle=<f5> "to stop indeting when pasting with the mouse, then try hitting F5 while in insert mode or :set paste
+set cursorline
 set backup
 "biar gak lupa sama mouse saat coding
 if has('mouse')
@@ -76,3 +77,8 @@ map <C-n> :NERDTreeToggle<CR>
 set backspace=2
 let delimitMate_expand_cr = 1 "kalau mau aktifin ini set backspace=2
 "let delimitMate_expand_space = 1
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+    
+set laststatus=2
