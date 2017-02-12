@@ -57,6 +57,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
+Plug 'https://github.com/majutsushi/tagbar.git'
 "Plug 'valloric/youcompleteme' " buat bantu ngehemat ngetik
 call plug#end()
 
@@ -77,3 +78,5 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 "NERDTREE
 map <C-n> :NERDTreeToggle<CR>
+"ctags shortcut
+nmap <F8> :TagbarToggle<CR>
