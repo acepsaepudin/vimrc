@@ -58,6 +58,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'https://github.com/majutsushi/tagbar.git'
+Plug 'airblade/vim-gitgutter'
 "Plug 'valloric/youcompleteme' " buat bantu ngehemat ngetik
 call plug#end()
 
@@ -80,3 +81,5 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 map <C-n> :NERDTreeToggle<CR>
 "ctags shortcut
 nmap <F8> :TagbarToggle<CR>
+"gitgutter, jadi ketika ada changes cepet keliatan
+set updatetime=250
