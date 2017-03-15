@@ -17,14 +17,10 @@ set ignorecase "fungsina buat nyari kata biar gampang
 set hlsearch "buat hightlight nyari kata, terus di :noh deh
 set pastetoggle=<f5> "to stop indeting when pasting with the mouse, then try hitting F5 while in insert mode or :set paste
 set cursorline
-set backup
-"biar gak lupa sama mouse saat coding
 if has('mouse')
     set mouse=a
 endif
 set rnu "pake relative number, kerasa kalo udah memaksimalkan fungsi hjkl
-
-"supaya bisa copy to clipboard, blok kodenya terus Ctrl+c
 vmap <C-c> "+y"
 set showmatch
 colorscheme Monokai
@@ -47,39 +43,19 @@ set omnifunc=phpcomplete#CompletePHP
 set omnifunc=csscomplete#CompleteCSS
 set omnifunc=htmlcomplete#CompleteTags
 set omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 "moal aya EOL pas nga-write
 set noeol
-"buat plugin bro
+"supaya ada word wrap
+set wrap
+"supaya wrapnya match dengan line
+set linebreak
+
+"buat config plugin
 call plug#begin('~/.vim/plugged')
 Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
 Plug 'https://github.com/majutsushi/tagbar.git'
-Plug 'airblade/vim-gitgutter'
-"Plug 'valloric/youcompleteme' " buat bantu ngehemat ngetik
 call plug#end()
 
-"airline
-let g:airline#extensions#tabline#enabled = 1
-" powerline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_theme='powerlineish'
-set laststatus=2
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
-let g:airline#extensions#tabline#fnamemod = ':t'
-
-"NERDTREE
-map <C-n> :NERDTreeToggle<CR>
-"ctags shortcut
+"tagbar
 nmap <F8> :TagbarToggle<CR>
-"gitgutter, jadi ketika ada changes cepet keliatan
-set updatetime=250
+"end config plugin
